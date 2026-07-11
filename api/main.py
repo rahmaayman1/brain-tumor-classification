@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 import io
 from src.inference import predict
+from api.schemas import PredictionResponse
 
 app = FastAPI(
     title="Brain Tumor Classification API",
@@ -26,7 +27,7 @@ def root():
 def health():
     return {"status": "healthy"}
 
-@app.post("/predict")
+@app.post("/predict", response_model=PredictionResponse)
 async def predict_tumor(file: UploadFile = File(...)):
     # Validate file type
     if file.content_type not in ["image/jpeg", "image/png", "image/jpg"]:
