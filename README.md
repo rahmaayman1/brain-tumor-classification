@@ -50,10 +50,14 @@ and a production-ready REST API with a Streamlit frontend.
 ## Grad-CAM Visualizations
 
 Grad-CAM reveals which regions the model focuses on when making predictions.
-For correct predictions, the model attends to anatomically relevant regions.
-For misclassified glioma cases, the model either focuses on image artifacts
-or confuses the tumor region with meningioma due to visual overlap.
 
+**Correct prediction — Pituitary** (model focuses on sella turcica region):
+![](docs/gradcam_samples/gradcam_pituitary.png)
+
+**Misclassified Glioma** (model focuses on wrong region):
+![](docs/gradcam_samples/gradcam_glioma_wrong.png)
+
+Full visualizations for all classes available in `docs/gradcam_samples/`.
 ---
 
 ## Key Findings
@@ -111,6 +115,10 @@ brain-tumor-classification/
 │   ├── test_inference.py
 │   └── test_preprocessing.py
 ├── docs/
+│   ├──gradcam_samples/
+│   ├── streamlit_demo_1.png
+│   ├── streamlit_demo_2.png
+│   └── fast-api.png
 ├── conftest.py
 ├── requirements.txt
 └── README.md
@@ -140,7 +148,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Place the trained model at `models/transfer_best_phase2.keras`.
 
 Run the API:
 ```bash
