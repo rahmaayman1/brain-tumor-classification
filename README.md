@@ -22,10 +22,10 @@ and a production-ready REST API with a Streamlit frontend.
 ## Demo
 
 ### Streamlit Application
-![Streamlit Demo](docs/streamlit_demo.png)
+![Streamlit Demo](docs/streamlit_demo_1.png)
 
 ### REST API (FastAPI)
-![FastAPI Docs](docs/fastapi_docs.png)
+![FastAPI Docs](docs/fast-api.png)
 
 ---
 
@@ -79,6 +79,9 @@ which the model partially focused on — a data quality concern worth noting.
 
 ```
 brain-tumor-classification/
+├── .github/
+│   └── workflows/
+|       └──ci.yml
 ├── notebooks/
 │   ├── 01_EDA.ipynb
 │   ├── 02_preprocessing.ipynb
@@ -86,6 +89,7 @@ brain-tumor-classification/
 │   ├── 04_transfer_learning.ipynb
 │   └── 05_gradcam.ipynb
 ├── src/
+│   ├── __init__.py
 │   ├── config.py
 │   ├── preprocessing.py
 │   └── inference.py
@@ -94,23 +98,22 @@ brain-tumor-classification/
 │   ├── schemas.py
 │   └── requirements.txt
 ├── frontend/
+│   ├── requirements.txt
 │   └── streamlit_app.py
 ├── docker/
 │   ├── Dockerfile.api
 │   ├── Dockerfile.frontend
 │   └── docker-compose.yml
+├── models/
+│   └── transfer_best_phase2.keras
 ├── tests/
 │   ├── test_api.py
 │   ├── test_inference.py
 │   └── test_preprocessing.py
-├── results/
-│   ├── figures/
-│   └── gradcam_samples/
 ├── docs/
-│   ├── streamlit_demo.png
-│   └── fastapi_docs.png
-└── models/
-    └── README.md
+├── conftest.py
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -162,17 +165,6 @@ docker-compose up --build
 | API Documentation | http://localhost:8000/docs |
 | Streamlit Frontend | http://localhost:8501 |
 
----
-
-## Deployment
-
-### Live Demo
-<!-- Add Streamlit Cloud link here after deployment -->
-Coming soon.
-
-### REST API
-<!-- Add deployed API link here -->
-Coming soon.
 
 ---
 
