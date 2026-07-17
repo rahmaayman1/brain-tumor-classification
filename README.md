@@ -57,7 +57,8 @@ Grad-CAM reveals which regions the model focuses on when making predictions.
 **Misclassified Glioma** (model focuses on wrong region):
 ![](docs/gradcam_samples/gradcam_glioma_wrong.png)
 
-Full visualizations for all classes available in `docs/gradcam_samples/`.
+Full visualizations for all classes available in docs/gradcam_samples/.
+
 ---
 
 ## Key Findings
